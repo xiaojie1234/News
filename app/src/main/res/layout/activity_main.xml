@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.example.xiaojie.news.ui.activity.MainActivity.Presenter" />
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.example.xiaojie.news.ui.activity.MainActivity">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="gdcp"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/btn_news"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableTop="@drawable/selector_tab_news"
+                    android:gravity="center"
+                    android:onClick="@{presenter.onClickNews}"
+                    android:padding="3dp"
+                    android:text="新闻"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/btn_viewlistening"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_tab_viewlistening"
+                    android:gravity="center"
+                    android:onClick="@{presenter.onClickViewListening}"
+                    android:padding="3dp"
+                    android:text="视听"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/btn_read"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_tab_viewlistening"
+                    android:gravity="center"
+                    android:onClick="@{presenter.onClickRead}"
+                    android:padding="3dp"
+                    android:text="阅读"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/btn_find"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_tab_find"
+                    android:gravity="center"
+                    android:onClick="@{presenter.onClickFind}"
+                    android:padding="3dp"
+                    android:text="发现"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/btn_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@drawable/selector_tab_settings"
+                    android:gravity="center"
+                    android:onClick="@{presenter.onClickSetting}"
+                    android:padding="3dp"
+                    android:text="设置"
+                    android:textSize="12sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            app:headerLayout="@layout/navigation_view_header"
+            app:menu="@menu/navigation_menu"
+            android:layout_gravity="left"
+             />
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</layout>
